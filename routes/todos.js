@@ -15,11 +15,17 @@ router.get('/', function(req, res){
 router.post('/', function(req, res){
    db.Todo.create(req.body)
    .then(function(newTodo){
-       res.json(newTodo);
+       res.status(201).json(newTodo);
    })
    .catch(function(err){
        res.send(err);
    });
+});
+
+router.get('/:todoId', function(req, res){
+    db.Todo.find(req.param.todoId, function(req, res){
+        
+    })
 });
 
 module.exports = router;
