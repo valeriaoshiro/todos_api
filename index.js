@@ -4,7 +4,7 @@ var express = require('express'),
 var todoRoutes = require('./routes/todos');
     
 app.get('/', function(req, res){
-    res.send('Hi from express');
+    res.send('Hi from root route');
 });
 
 app.use('/api/todos', todoRoutes);
